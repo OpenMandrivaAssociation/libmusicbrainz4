@@ -3,7 +3,7 @@
 %define release	%mkrel 1
 
 %define api 4
-%define major 2
+%define major 3
 %define libname %mklibname musicbrainz %api %{major}
 %define develname %mklibname -d musicbrainz %api
 
