@@ -11,16 +11,16 @@ Name:		libmusicbrainz4
 Version:	%{version}
 Release:	%{release}
 Summary:	A software library for accesing MusicBrainz servers
-Source:		http://ftp.musicbrainz.org/pub/musicbrainz/%{package_name}-%{version}.tar.gz
-Patch0: cmake_include_dir.patch
+Source0:	http://ftp.musicbrainz.org/pub/musicbrainz/%{package_name}-%{version}.tar.gz
+Patch0:		cmake_include_dir.patch
 URL:		http://musicbrainz.org/doc/libmusicbrainz
 Group:		Sound
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 License:	LGPLv2+
 BuildRequires:  cmake
-BuildRequires:  neon-devel
-BuildRequires:  libdiscid-devel
-BuildRequires:  libcppunit-devel
+BuildRequires:	pkgconfig(neon)
+BuildRequires:	pkgconfig(libdiscid)
+BuildRequires:	pkgconfig(cppunit)
 
 %description
 The MusicBrainz client library allows applications to make metadata
