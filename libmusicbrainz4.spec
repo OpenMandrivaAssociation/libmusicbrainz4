@@ -1,7 +1,6 @@
 %define package_name    libmusicbrainz
 %define	version	4.0.0
-%define prerel beta2
-%define release	%mkrel -c %prerel 1
+%define release	%mkrel 1
 
 %define api 4
 %define major 2
@@ -12,7 +11,8 @@ Name:		libmusicbrainz4
 Version:	%{version}
 Release:	%{release}
 Summary:	A software library for accesing MusicBrainz servers
-Source:		http://ftp.musicbrainz.org/pub/musicbrainz/%{package_name}-%{version}%prerel.tar.gz
+Source:		http://ftp.musicbrainz.org/pub/musicbrainz/%{package_name}-%{version}.tar.gz
+Patch0: cmake_include_dir.patch
 URL:		http://musicbrainz.org/doc/libmusicbrainz
 Group:		Sound
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -49,7 +49,8 @@ applications which will use libmusicbrainz.
 
 
 %prep
-%setup -q -n %{package_name}-%{version}%prerel
+%setup -q -n %{package_name}-%{version}
+%apply_patches
 
 %build
 cmake . -DCMAKE_INSTALL_PREFIX=%_prefix \
