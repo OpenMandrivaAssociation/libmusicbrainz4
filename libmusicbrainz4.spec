@@ -1,6 +1,6 @@
 %define package_name    libmusicbrainz
-%define	version	4.0.0
-%define release	%mkrel 1
+%define	version	4.0.1
+%define release	1
 
 %define api 4
 %define major 3
@@ -15,7 +15,6 @@ Source0:	http://ftp.musicbrainz.org/pub/musicbrainz/%{package_name}-%{version}.t
 Patch0:		cmake_include_dir.patch
 URL:		http://musicbrainz.org/doc/libmusicbrainz
 Group:		Sound
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 License:	LGPLv2+
 BuildRequires:  cmake
 BuildRequires:	pkgconfig(neon)
@@ -46,8 +45,6 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package contains the headers that programmers will need to develop
 applications which will use libmusicbrainz.
 
-
-
 %prep
 %setup -q -n %{package_name}-%{version}
 %apply_patches
@@ -58,35 +55,17 @@ cmake . -DCMAKE_INSTALL_PREFIX=%_prefix \
     -DLIB_SUFFIX=64 \
 %endif
 
-
 %make
 
-
 %install
-rm -rf %{buildroot}
 
 %makeinstall_std
 
-
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-
 %files -n %{libname}
-%defattr(-, root, root)
-%doc AUTHORS.txt COPYING.txt NEWS.txt README.txt
+%doc AUTHORS.txt COPYING.txt NEWS.txt
 %{_libdir}/libmusicbrainz%{api}.so.%{major}*
 
 %files -n %develname
-%defattr(-, root, root)
 %{_includedir}/musicbrainz%{api}
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/libmusicbrainz%{api}.pc
