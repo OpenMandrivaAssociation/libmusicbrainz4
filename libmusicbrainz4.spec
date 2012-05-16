@@ -1,5 +1,5 @@
 %define package_name    libmusicbrainz
-%define	version	4.0.1
+%define	version	4.0.2
 %define release	1
 
 %define api 4
@@ -11,7 +11,7 @@ Name:		libmusicbrainz4
 Version:	%{version}
 Release:	%{release}
 Summary:	A software library for accesing MusicBrainz servers
-Source0:	http://ftp.musicbrainz.org/pub/musicbrainz/%{package_name}-%{version}.tar.gz
+Source0:	https://github.com/downloads/metabrainz/libmusicbrainz/%{package_name}-%{version}.tar.gz
 Patch0:		cmake_include_dir.patch
 URL:		http://musicbrainz.org/doc/libmusicbrainz
 Group:		Sound
