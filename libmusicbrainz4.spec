@@ -13,6 +13,7 @@ Release:	%{release}
 Summary:	A software library for accesing MusicBrainz servers
 Source0:	https://github.com/downloads/metabrainz/libmusicbrainz/%{package_name}-%{version}.tar.gz
 Patch0:		cmake_include_dir.patch
+Patch1:		libmusicbrainz-4.0.2-remove-unused-variable.patch
 URL:		http://musicbrainz.org/doc/libmusicbrainz
 Group:		Sound
 License:	LGPLv2+
