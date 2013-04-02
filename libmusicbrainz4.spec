@@ -1,6 +1,7 @@
 %define package_name    libmusicbrainz
 %define	version	4.0.2
 %define release	1
+%define debug_package          %{nil}
 
 %define api 4
 %define major 3
