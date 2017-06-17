@@ -1,6 +1,4 @@
 %define package_name    libmusicbrainz
-%define	version	4.0.2
-%define release	1
 %define debug_package          %{nil}
 
 %define api 4
@@ -9,12 +7,11 @@
 %define develname %mklibname -d musicbrainz %api
 
 Name:		libmusicbrainz4
-Version:	%{version}
-Release:	%{release}
+Version:	4.0.3
+Release:	1
 Summary:	A software library for accesing MusicBrainz servers
 Source0:	https://github.com/downloads/metabrainz/libmusicbrainz/%{package_name}-%{version}.tar.gz
 Patch0:		cmake_include_dir.patch
-Patch1:		libmusicbrainz-4.0.2-remove-wextra-warnings.patch
 URL:		http://musicbrainz.org/doc/libmusicbrainz
 Group:		Sound
 License:	LGPLv2+
