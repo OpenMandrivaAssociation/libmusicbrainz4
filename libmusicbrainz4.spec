@@ -46,7 +46,7 @@ applications which will use libmusicbrainz.
 
 %prep
 %setup -q -n %{package_name}-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 cmake . -DCMAKE_INSTALL_PREFIX=%_prefix \
