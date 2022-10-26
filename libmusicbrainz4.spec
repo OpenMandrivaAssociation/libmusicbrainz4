@@ -8,9 +8,9 @@
 
 Name:		libmusicbrainz4
 Version:	4.0.3
-Release:	1
+Release:	2
 Summary:	A software library for accesing MusicBrainz servers
-Source0:	https://github.com/downloads/metabrainz/libmusicbrainz/%{package_name}-%{version}.tar.gz
+Source0:	https://github.com/metabrainz/libmusicbrainz/archive/refs/tags/release-%{version}.tar.gz
 Patch0:		cmake_include_dir.patch
 URL:		http://musicbrainz.org/doc/libmusicbrainz
 Group:		Sound
@@ -45,8 +45,7 @@ This package contains the headers that programmers will need to develop
 applications which will use libmusicbrainz.
 
 %prep
-%setup -q -n %{package_name}-%{version}
-%autopatch -p1
+%autosetup -p1 -n %{package_name}-release-%{version}
 
 %build
 cmake . -DCMAKE_INSTALL_PREFIX=%_prefix \
